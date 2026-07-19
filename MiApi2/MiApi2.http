@@ -1,0 +1,7 @@
+@page "http://localhost:5097/api/tiposmovimiento"
+@MiApi2_HostAddress = http://localhost:5097
+
+GET {{MiApi2_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

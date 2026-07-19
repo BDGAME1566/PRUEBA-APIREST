@@ -1,0 +1,7 @@
+
+[
+    { "Codigo": 29, "Descripcion": "Ajuste al Inventario", "VActiva": false },
+    { "Codigo": 51, "Descripcion": "Avance Produccion", "VActiva": false },
+    { "Codigo": 17, "Descripcion": "Balance Inicial", "VActiva": false }
+]
+

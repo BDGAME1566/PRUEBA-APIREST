@@ -1,0 +1,46 @@
+@page "/movimientos"
+@page "/"
+@rendermode InteractiveServer
+@using RetoTecnico.Models
+@using RetoTecnico.Services
+@inject TipoMovimientoService TipoMovimientoService
+
+<PageTitle>Tipos de Movimiento</PageTitle>
+
+<h3>Tipos de Movimiento</h3>
+
+@if (movimientos == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Activa</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in movimientos)
+            {
+                <tr>
+                    <td>@item.Codigo</td>
+                    <td>@item.Descripcion</td>
+                    <td>@(item.VActiva ? "Sí" : "No")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<TipoMovimiento>? movimientos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        movimientos = await TipoMovimientoService.ObtenerTiposMovimientoAsync();
+    }
+}
